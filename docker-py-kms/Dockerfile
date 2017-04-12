@@ -14,4 +14,4 @@ RUN set xe- \
 
 EXPOSE 1688
 
-CMD ["python", "/app/py-kms/server.py", ${server}, ${port} ]
+CMD python /app/py-kms/server.py ${server} ${port}
