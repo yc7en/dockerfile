@@ -12,7 +12,6 @@ RUN set xe- \
 	&& git clone https://github.com/myanaloglife/py-kms.git \
 	&& apk del git 
 
-ENV sever 0.0.0.0
-ENV port 1688
 EXPOSE 1688
+
 CMD ["python", "/app/py-kms/server.py", ${server}, ${port} ]
