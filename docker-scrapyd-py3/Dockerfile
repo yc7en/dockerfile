@@ -9,6 +9,7 @@ FROM python:3.6.1
 
 MAINTAINER yc7en
 
+
 RUN	set -ex \
 	&& pip install scrapy==1.3.3 \
 				   scrapyd==1.2.0 \
@@ -17,7 +18,7 @@ RUN	set -ex \
 
 COPY ./scrapyd.conf /etc/scrapyd/
 
-VOLUME /etc/scrapyd/ /var/lib/scrapyd/
+VOLUME /scrapyd/
 
 EXPOSE 6800
 

@@ -1,0 +1,11 @@
+version: '2'
+services:
+  scrapyd:
+    image: yc7en/scrapyd-py3
+    ports:
+      - "6800:6800"
+    volumes:
+      - ./scrapyd:/scrapyd
+    container_name: scrapyd
+    restart: always
+  

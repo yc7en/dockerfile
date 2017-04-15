@@ -16,20 +16,23 @@ Please use this as base image for your own project.
 docker-compose.yml
 ---------------------------
 
-	scrapyd:
-  		image: yc7en/scrapyd-py3
-  	ports:
-    	- "6800:6800"
-  	volumes:
-    	- ./data:/var/lib/scrapyd
-  	restart: always
+    version: '2'
+    services:
+      scrapyd:
+        image: yc7en/scrapyd-py3
+        ports:
+          - "6800:6800"
+        volumes:
+          - ./scrapyd:/scrapyd
+        container_name: scrapyd
+        restart: always
 
-	scrapy:
-	  	image: yc7en/scrapyd-py3
-	  	command: bash
-	  	volumes:
-	    	- .:/code
-	  	working_dir: /code
-	  	restart: always
+
+Then you can use it like this:
+
+    docker-compose up -d scrapyd
+
+
+
 
 
